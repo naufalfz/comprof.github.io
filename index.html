@@ -1403,21 +1403,21 @@
 					<!-- .col-md-4 end -->
 					<div class="col-xs-12 col-sm-12 col-md-8">
 						<div class="row">
-							<form id="contact-form" action="https://7oroof.com/demos/yellowhats/dark/assets/php/sendmail.php" method="post">
+							<form name="comprof" action="#!" method="post">
 								<div class="col-md-6">
-									<input type="text" class="form-control mb-30" name="contact-name" id="name" placeholder="Your Name" required/>
+									<input type="text" class="form-control mb-30" name="nama" id="name" placeholder="Your Name" required/>
 								</div>
 								<div class="col-md-6">
-									<input type="email" class="form-control mb-30" name="contact-email" id="email" placeholder="Your Email" required/>
+									<input type="email" class="form-control mb-30" name="emaill" id="email" placeholder="Your Email" required/>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control mb-30" name="contact-telephone" id="telephone" placeholder="Telephone" required/>
+									<input type="text" class="form-control mb-30" name="telephone" id="telephone" placeholder="Telephone" required/>
 								</div>
 								<div class="col-md-6">
-									<input type="text" class="form-control mb-30" name="contact-subject" id="subject" placeholder="Subject" required/>
+									<input type="text" class="form-control mb-30" name="subject" id="subject" placeholder="Subject" required/>
 								</div>
 								<div class="col-md-12">
-									<textarea class="form-control mb-30" name="contact-message" id="message" rows="2" placeholder="Message Details" required></textarea>
+									<textarea class="form-control mb-30" name="isi pesan" id="message" rows="2" placeholder="Message Details" required></textarea>
 								</div>
 								<div class="col-md-12">
 									<button type="submit" id="submit-message" class="btn btn-primary btn-black btn-block">Send Message</button>
@@ -1571,6 +1571,21 @@ jQuery(document).ready(function() {
 <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 <div class="elfsight-app-a91a5f1b-da17-4968-b0e1-2cda74de14ce" data-elfsight-app-lazy></div>
 
+<!-- Form google sheets -->
+	
+
+	<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzxoPe7yvBJnSZp9rCX4KYG8ZdKhDMd6bOJfyvrvhhOYZoiIZ3dIXw3dSHBUghqTF_T/exec'
+  const form = document.forms['comprof']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+	
 </body>
 
 
